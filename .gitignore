@@ -1,0 +1,14 @@
+/node_modules
+/.next
+/out
+/build
+.DS_Store
+*.pem
+.env*
+.vercel
+next-env.d.ts
+
+# Material fuente del cliente (interno, no parte del sitio)
+FICHA DE CLIENTE Jali Vali.docx
+JALIE CV 2026 (1).pdf
+LOGO JALIE VALI.png

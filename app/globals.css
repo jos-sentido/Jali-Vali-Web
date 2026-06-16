@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+/* ===========================================================================
+   JALIE-VALI — Sistema de marca
+   Paleta tomada del logo: verde construcción + negro + grises.
+   =========================================================================== */
+@theme {
+  --color-jv-green: #3da935;
+  --color-jv-green-dark: #2c7d26;
+  --color-jv-green-light: #5ec64f;
+  --color-jv-black: #111213;
+  --color-jv-ink: #1b1d1f;
+  --color-jv-gray: #5b6168;
+  --color-jv-line: #e4e7ea;
+  --color-jv-bg: #f6f7f8;
+
+  --font-body: var(--font-body), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 14px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: var(--color-jv-ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: -0.015em;
+}
+
+/* Foco accesible visible (teclado) */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-jv-green);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 100;
+  background: var(--color-jv-ink);
+  color: #fff;
+  padding: 0.7rem 1.1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Utilidades de composición */
+.container-jv {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.section {
+  padding-block: 5rem;
+}
+@media (max-width: 768px) {
+  .section {
+    padding-block: 3.25rem;
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-jv-green-dark);
+}
+.eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 2px;
+  background: var(--color-jv-green);
+}
+
+button,
+[role="button"],
+.btn {
+  cursor: pointer;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.85rem 1.5rem;
+  transition: all 0.18s ease;
+  line-height: 1;
+}
+.btn-primary {
+  background: var(--color-jv-green);
+  color: #06140a;
+}
+.btn-primary:hover {
+  background: var(--color-jv-green-dark);
+  color: #fff;
+  transform: translateY(-1px);
+}
+.btn-ghost {
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  color: #fff;
+}
+.btn-ghost:hover {
+  border-color: var(--color-jv-green);
+  background: rgba(61, 169, 53, 0.12);
+}
+.btn-dark {
+  background: var(--color-jv-ink);
+  color: #fff;
+}
+.btn-dark:hover {
+  background: #000;
+  transform: translateY(-1px);
+}
+
+/* Patrón de fondo industrial sutil */
+.grid-pattern {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: reveal 0.7s ease forwards;
+}
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respeta preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

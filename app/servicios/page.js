@@ -1,5 +1,5 @@
 import { services } from "@/lib/site";
-import { Check, CTASection, PlaceholderImage } from "@/components/ui";
+import { Check, CTASection, ObraImage } from "@/components/ui";
 import PageHero from "@/components/PageHero";
 
 export const metadata = {
@@ -53,7 +53,7 @@ export default function ServiciosPage() {
             </div>
 
             <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-              <PlaceholderImage label={`Obra · ${s.title}`} ratio="aspect-[4/5]" />
+              <ObraImage src={s.image} alt={`Obra · ${s.title}`} ratio="aspect-[4/5]" />
             </div>
           </div>
         </section>

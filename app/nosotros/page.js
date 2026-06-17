@@ -1,5 +1,5 @@
 import { company, valueProps, stats, PLACEHOLDER } from "@/lib/site";
-import { Check, CTASection, PendingTag, PlaceholderImage, SectionHeading } from "@/components/ui";
+import { Check, CTASection, PendingTag, ObraImage, SectionHeading } from "@/components/ui";
 import PageHero from "@/components/PageHero";
 import Counter from "@/components/Counter";
 
@@ -56,7 +56,7 @@ export default function NosotrosPage() {
               ))}
             </dl>
           </div>
-          <PlaceholderImage label="Equipo y obra JALIE-VALI" ratio="aspect-[4/3]" />
+          <ObraImage src="/brand/obras/pipeline.jpg" alt="Obra de infraestructura JALIE-VALI" ratio="aspect-[4/3]" />
         </div>
       </section>
 

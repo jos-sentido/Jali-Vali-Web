@@ -1,4 +1,22 @@
 import Link from "next/link";
+import Image from "next/image";
+
+// Foto real de obra (next/image con fill). Si no hay src, cae al placeholder.
+export function ObraImage({ src, alt, ratio = "aspect-[4/3]", className = "", priority = false }) {
+  if (!src) return <PlaceholderImage label={alt} ratio={ratio} className={className} />;
+  return (
+    <div className={`${ratio} ${className} relative overflow-hidden rounded-xl bg-jv-ink`}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 768px) 100vw, 50vw"
+        className="object-cover"
+        priority={priority}
+      />
+    </div>
+  );
+}
 
 // Encabezado de sección reutilizable
 export function SectionHeading({ eyebrow, title, intro, light = false, center = false }) {

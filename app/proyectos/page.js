@@ -1,5 +1,5 @@
 import { featuredProjects } from "@/lib/site";
-import { CTASection, PlaceholderImage, PendingTag, SectionHeading } from "@/components/ui";
+import { CTASection, ObraImage, PendingTag, SectionHeading } from "@/components/ui";
 import PageHero from "@/components/PageHero";
 
 export const metadata = {
@@ -36,7 +36,7 @@ export default function ProyectosPage() {
                 </span>
               ))}
             </div>
-            <PendingTag>Faltan fotos y datos reales de obra</PendingTag>
+            <PendingTag>Fotos del catálogo · faltan cliente, ubicación y año</PendingTag>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -46,8 +46,8 @@ export default function ProyectosPage() {
                 className="group rounded-card overflow-hidden border border-jv-line bg-white hover:shadow-lg transition-all"
               >
                 <div className="relative">
-                  <PlaceholderImage label={p.title} ratio="aspect-[4/3]" className="rounded-none" />
-                  <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-jv-green text-jv-ink text-xs font-bold">
+                  <ObraImage src={p.image} alt={p.title} ratio="aspect-[4/3]" className="rounded-none" />
+                  <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-jv-green text-jv-ink text-xs font-bold z-10">
                     {p.category}
                   </span>
                 </div>

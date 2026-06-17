@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   company,
   stats,
@@ -22,6 +23,18 @@ export default function Home() {
     <>
       {/* ================= HERO ================= */}
       <section className="relative bg-jv-ink text-white overflow-hidden">
+        <div className="hidden lg:block absolute inset-y-0 right-0 w-[58%]">
+          <Image
+            src="/brand/obras/desazolve-canal.jpg"
+            alt=""
+            fill
+            priority
+            sizes="58vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-jv-ink via-jv-ink/90 to-jv-ink/30" />
+          <div className="absolute inset-0 bg-gradient-to-t from-jv-ink/60 to-transparent" />
+        </div>
         <div className="absolute inset-0 grid-pattern opacity-50" />
         <div className="absolute -right-32 -top-32 w-[480px] h-[480px] rounded-full bg-jv-green/10 blur-3xl" />
         <div className="container-jv relative py-20 lg:py-28">

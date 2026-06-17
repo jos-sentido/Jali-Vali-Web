@@ -213,11 +213,11 @@ export default function Home() {
               title="Maquinaria propia, lista para cualquier reto"
               intro="Contamos con una amplia flota de maquinaria y equipos especializados que nos permite ejecutar proyectos de infraestructura con eficiencia, seguridad y alta capacidad de respuesta."
             />
-            <div className="mt-8 flex items-baseline gap-3">
-              <span className="text-6xl font-extrabold text-jv-green">
+            <div className="mt-8 flex items-center gap-4">
+              <span className="text-6xl font-extrabold text-jv-green leading-none">
                 <Counter value={machineryTotal} />
               </span>
-              <span className="text-jv-gray font-medium leading-tight">
+              <span className="text-jv-gray font-medium leading-snug">
                 equipos especializados
                 <br />
                 de maquinaria pesada

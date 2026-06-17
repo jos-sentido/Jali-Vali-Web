@@ -74,10 +74,10 @@ export default function Home() {
 
       {/* ============ BARRA DE DIFERENCIADORES ============ */}
       <section className="bg-jv-green-dark">
-        <div className="container-jv py-5 flex flex-wrap items-center justify-center lg:justify-between gap-x-8 gap-y-2 text-white text-sm font-medium">
-          {valueProps.slice(0, 5).map((v) => (
+        <div className="container-jv py-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-3 text-white text-sm font-medium">
+          {valueProps.slice(0, 4).map((v) => (
             <span key={v} className="inline-flex items-center gap-2.5">
-              <Bullet tone="white" className="h-3" /> {v}
+              <Bullet tone="white" className="h-3 shrink-0" /> {v}
             </span>
           ))}
         </div>

@@ -12,7 +12,7 @@ import {
   credentials,
   gateways,
 } from "@/lib/site";
-import { SectionHeading, Check, Bullet, CTASection } from "@/components/ui";
+import { SectionHeading, Shield, Bullet, CTASection } from "@/components/ui";
 import Counter from "@/components/Counter";
 
 const money = (n) =>
@@ -96,7 +96,7 @@ export default function Home() {
                 className="flex items-start gap-3 rounded-xl border border-jv-line px-4 py-3.5"
               >
                 <span className="mt-0.5 w-8 h-8 rounded-lg bg-jv-green/10 text-jv-green-dark flex items-center justify-center shrink-0">
-                  <Check className="w-4 h-4" />
+                  <Shield className="w-4 h-4" />
                 </span>
                 <div>
                   <p className="font-bold text-jv-ink text-sm leading-tight">{c.label}</p>

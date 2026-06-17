@@ -79,6 +79,15 @@ export function Bullet({ className = "", tone = "green" }) {
   );
 }
 
+// Escudo (cumplimiento / credenciales) — reemplaza palomitas en contextos de "verificado".
+export function Shield({ className = "" }) {
+  return (
+    <svg className={className} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
+      <path d="M12 3l7 3v5c0 4.6-3 7.7-7 9-4-1.3-7-4.4-7-9V6l7-3z" />
+    </svg>
+  );
+}
+
 export function Check({ className = "" }) {
   return (
     <svg className={className} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">

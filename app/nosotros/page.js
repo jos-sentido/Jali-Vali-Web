@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { company, valueProps, stats, PLACEHOLDER } from "@/lib/site";
-import { Check, CTASection, PendingTag, ObraImage, SectionHeading } from "@/components/ui";
+import { Bullet, CTASection, PendingTag, ObraImage, SectionHeading } from "@/components/ui";
 import PageHero from "@/components/PageHero";
 import Counter from "@/components/Counter";
 
@@ -14,7 +14,7 @@ const pillars = [
   {
     title: "Misión",
     text: "Ejecutar proyectos de infraestructura hidráulica, sanitaria, pluvial y eléctrica con los más altos estándares de calidad, seguridad y cumplimiento normativo, generando valor para el desarrollo del país.",
-    image: "/brand/nosotros/equipo-ingenieros.jpg",
+    image: "/brand/nosotros/mision.jpg",
     pending: true,
   },
   {
@@ -26,7 +26,7 @@ const pillars = [
   {
     title: "Valores",
     text: "Compromiso, calidad, responsabilidad, seguridad y eficiencia en cada proyecto que ejecutamos.",
-    image: "/brand/nosotros/seguridad-calidad.jpg",
+    image: "/brand/nosotros/valores.jpg",
     pending: false,
   },
 ];
@@ -38,7 +38,7 @@ export default function NosotrosPage() {
         eyebrow="Quiénes somos"
         title="Construimos la infraestructura que sostiene al país"
         intro={company.description}
-        bg="/brand/nosotros/equipo-hero.jpg"
+        bg="/brand/nosotros/hero.jpg"
       />
 
       {/* Intro + imagen */}
@@ -109,7 +109,7 @@ export default function NosotrosPage() {
           <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {valueProps.map((v) => (
               <div key={v} className="rounded-xl border border-jv-line p-5 hover:border-jv-green transition-colors">
-                <Check className="text-jv-green" />
+                <Bullet className="h-4" />
                 <p className="mt-3 font-semibold text-jv-ink text-sm leading-snug">{v}</p>
               </div>
             ))}

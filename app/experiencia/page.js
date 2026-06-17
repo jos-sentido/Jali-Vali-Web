@@ -1,5 +1,5 @@
 import { portfolioBreakdown, company, PLACEHOLDER } from "@/lib/site";
-import { CTASection, PendingTag, SectionHeading, Check } from "@/components/ui";
+import { CTASection, PendingTag, SectionHeading, Shield } from "@/components/ui";
 import PageHero from "@/components/PageHero";
 
 export const metadata = {
@@ -95,7 +95,7 @@ export default function ExperienciaPage() {
             {["Registro de contratista", "Certificación de calidad", "Cumplimiento NOM / CFE", "Afiliaciones"].map(
               (c) => (
                 <div key={c} className="rounded-xl border border-dashed border-jv-line bg-white p-6 text-center">
-                  <Check className="text-jv-green/50 mx-auto" />
+                  <Shield className="text-jv-green/50 mx-auto" />
                   <p className="mt-2 text-sm font-medium text-jv-ink">{c}</p>
                   <p className="text-xs text-jv-gray mt-1">{PLACEHOLDER}</p>
                 </div>

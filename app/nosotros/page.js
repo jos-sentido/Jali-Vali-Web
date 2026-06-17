@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { company, valueProps, stats, PLACEHOLDER } from "@/lib/site";
 import { Check, CTASection, PendingTag, ObraImage, SectionHeading } from "@/components/ui";
 import PageHero from "@/components/PageHero";
@@ -13,16 +14,19 @@ const pillars = [
   {
     title: "Misión",
     text: "Ejecutar proyectos de infraestructura hidráulica, sanitaria, pluvial y eléctrica con los más altos estándares de calidad, seguridad y cumplimiento normativo, generando valor para el desarrollo del país.",
+    image: "/brand/nosotros/equipo-ingenieros.jpg",
     pending: true,
   },
   {
     title: "Visión",
     text: "Ser la constructora de referencia en infraestructura estratégica en México, reconocida por su capacidad operativa, su maquinaria propia y la confiabilidad de sus soluciones llave en mano.",
+    image: "/brand/banners/aerial-infra.jpg",
     pending: true,
   },
   {
     title: "Valores",
     text: "Compromiso, calidad, responsabilidad, seguridad y eficiencia en cada proyecto que ejecutamos.",
+    image: "/brand/nosotros/seguridad-calidad.jpg",
     pending: false,
   },
 ];
@@ -34,6 +38,7 @@ export default function NosotrosPage() {
         eyebrow="Quiénes somos"
         title="Construimos la infraestructura que sostiene al país"
         intro={company.description}
+        bg="/brand/nosotros/equipo-hero.jpg"
       />
 
       {/* Intro + imagen */}
@@ -66,12 +71,27 @@ export default function NosotrosPage() {
           <SectionHeading center eyebrow="Nuestra esencia" title="Misión, visión y valores" />
           <div className="mt-12 grid md:grid-cols-3 gap-6">
             {pillars.map((p) => (
-              <div key={p.title} className="rounded-card bg-white border border-jv-line p-7">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-xl font-bold text-jv-ink">{p.title}</h3>
-                  {p.pending && <PendingTag>Validar redacción</PendingTag>}
+              <div
+                key={p.title}
+                className="rounded-card bg-white border border-jv-line overflow-hidden flex flex-col"
+              >
+                <div className="relative h-40">
+                  <Image
+                    src={p.image}
+                    alt={p.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-jv-ink/85 via-jv-ink/30 to-transparent" />
+                  <h3 className="absolute bottom-3 left-5 text-xl font-bold text-white">{p.title}</h3>
                 </div>
-                <p className="mt-4 text-jv-gray text-sm leading-relaxed">{p.text}</p>
+                <div className="p-7 flex-1">
+                  {p.pending && <PendingTag>Validar redacción</PendingTag>}
+                  <p className={`text-jv-gray text-sm leading-relaxed ${p.pending ? "mt-3" : ""}`}>
+                    {p.text}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -98,8 +118,13 @@ export default function NosotrosPage() {
       </section>
 
       {/* Datos corporativos pendientes */}
-      <section className="section bg-jv-ink text-white">
-        <div className="container-jv">
+      <section className="section relative bg-jv-ink text-white overflow-hidden">
+        <div className="absolute inset-0">
+          <Image src="/brand/banners/site-panorama.jpg" alt="" fill sizes="100vw" className="object-cover" />
+          <div className="absolute inset-0 bg-jv-ink/88" />
+          <div className="absolute inset-0 grid-pattern opacity-30" />
+        </div>
+        <div className="container-jv relative">
           <div className="flex items-center gap-3 flex-wrap">
             <SectionHeading light eyebrow="Ficha corporativa" title="Datos de la empresa" />
           </div>

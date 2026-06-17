@@ -1,5 +1,5 @@
 import { machinery, machineryTotal } from "@/lib/site";
-import { Check, CTASection, PlaceholderImage, SectionHeading } from "@/components/ui";
+import { Bullet, CTASection, ObraImage, SectionHeading } from "@/components/ui";
 import PageHero from "@/components/PageHero";
 import Counter from "@/components/Counter";
 
@@ -40,7 +40,7 @@ export default function MaquinariaPage() {
             <ul className="lg:col-span-2 grid sm:grid-cols-2 gap-3">
               {capacities.map((c) => (
                 <li key={c} className="flex gap-2.5 text-sm text-white/85">
-                  <Check className="text-jv-green shrink-0 mt-0.5" /> {c}
+                  <Bullet className="mt-0.5" /> {c}
                 </li>
               ))}
             </ul>
@@ -55,7 +55,7 @@ export default function MaquinariaPage() {
           <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {machinery.map((m) => (
               <article key={m.name} className="rounded-card bg-white border border-jv-line overflow-hidden hover:shadow-lg hover:border-jv-green transition-all">
-                <PlaceholderImage label={m.name} ratio="aspect-[4/3]" className="rounded-none" />
+                <ObraImage src={m.image} alt={m.name} ratio="aspect-[4/3]" className="rounded-none" />
                 <div className="p-5 flex items-center justify-between">
                   <div>
                     <h3 className="font-bold text-jv-ink leading-tight">{m.name}</h3>

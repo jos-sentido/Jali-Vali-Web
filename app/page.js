@@ -12,7 +12,7 @@ import {
   credentials,
   gateways,
 } from "@/lib/site";
-import { SectionHeading, Check, CTASection } from "@/components/ui";
+import { SectionHeading, Check, Bullet, CTASection } from "@/components/ui";
 import Counter from "@/components/Counter";
 
 const money = (n) =>
@@ -75,8 +75,8 @@ export default function Home() {
       <section className="bg-jv-green-dark">
         <div className="container-jv py-5 flex flex-wrap items-center justify-center lg:justify-between gap-x-8 gap-y-2 text-white text-sm font-medium">
           {valueProps.slice(0, 5).map((v) => (
-            <span key={v} className="inline-flex items-center gap-2">
-              <Check className="text-white/90" /> {v}
+            <span key={v} className="inline-flex items-center gap-2.5">
+              <Bullet tone="white" className="h-3" /> {v}
             </span>
           ))}
         </div>
@@ -126,8 +126,8 @@ export default function Home() {
                 <p className="mt-2 text-sm text-jv-gray leading-relaxed">{g.desc}</p>
                 <ul className="mt-5 space-y-2 flex-1">
                   {g.bullets.map((b) => (
-                    <li key={b} className="flex gap-2 text-sm text-jv-ink/85">
-                      <Check className="text-jv-green shrink-0 mt-0.5" /> {b}
+                    <li key={b} className="flex gap-2.5 text-sm text-jv-ink/85">
+                      <Bullet className="mt-0.5" /> {b}
                     </li>
                   ))}
                 </ul>
@@ -171,8 +171,8 @@ export default function Home() {
                 <p className="mt-2 text-jv-gray text-sm leading-relaxed">{s.short}</p>
                 <ul className="mt-5 space-y-2">
                   {s.items.slice(0, 4).map((it) => (
-                    <li key={it} className="flex gap-2 text-sm text-jv-ink/80">
-                      <Check className="text-jv-green shrink-0 mt-0.5" />
+                    <li key={it} className="flex gap-2.5 text-sm text-jv-ink/80">
+                      <Bullet className="mt-0.5" />
                       {it}
                     </li>
                   ))}
@@ -288,7 +288,7 @@ export default function Home() {
               <ul className="mt-5 grid sm:grid-cols-2 gap-3">
                 {audience.gobierno.map((a) => (
                   <li key={a} className="flex gap-2 text-sm text-jv-ink/85">
-                    <Check className="text-jv-green shrink-0 mt-0.5" /> {a}
+                    <Bullet className="mt-0.5" /> {a}
                   </li>
                 ))}
               </ul>
@@ -300,7 +300,7 @@ export default function Home() {
               <ul className="mt-5 grid sm:grid-cols-2 gap-3">
                 {audience.privado.map((a) => (
                   <li key={a} className="flex gap-2 text-sm text-jv-ink/85">
-                    <Check className="text-jv-green shrink-0 mt-0.5" /> {a}
+                    <Bullet className="mt-0.5" /> {a}
                   </li>
                 ))}
               </ul>

@@ -1,5 +1,5 @@
 import { services } from "@/lib/site";
-import { Check, CTASection, ObraImage } from "@/components/ui";
+import { Bullet, CTASection, ObraImage } from "@/components/ui";
 import PageHero from "@/components/PageHero";
 
 export const metadata = {
@@ -32,7 +32,7 @@ export default function ServiciosPage() {
               <div className="mt-8 grid sm:grid-cols-2 gap-x-6 gap-y-3">
                 {s.items.map((it) => (
                   <div key={it} className="flex gap-2.5 text-sm text-jv-ink/90">
-                    <Check className="text-jv-green shrink-0 mt-0.5" />
+                    <Bullet className="mt-0.5" />
                     {it}
                   </div>
                 ))}
@@ -44,8 +44,8 @@ export default function ServiciosPage() {
                 </h4>
                 <ul className="mt-3 grid sm:grid-cols-2 gap-2">
                   {s.benefits.map((b) => (
-                    <li key={b} className="flex gap-2 text-sm text-jv-ink/85">
-                      <Check className="text-jv-green shrink-0 mt-0.5" /> {b}
+                    <li key={b} className="flex gap-2.5 text-sm text-jv-ink/85">
+                      <Bullet className="mt-0.5" /> {b}
                     </li>
                   ))}
                 </ul>

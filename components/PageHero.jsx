@@ -1,6 +1,15 @@
-export default function PageHero({ eyebrow, title, intro }) {
+import Image from "next/image";
+
+export default function PageHero({ eyebrow, title, intro, bg }) {
   return (
     <section className="relative bg-jv-ink text-white overflow-hidden">
+      {bg && (
+        <div className="absolute inset-0">
+          <Image src={bg} alt="" fill priority sizes="100vw" className="object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-jv-ink via-jv-ink/92 to-jv-ink/55" />
+          <div className="absolute inset-0 bg-gradient-to-t from-jv-ink/80 to-transparent" />
+        </div>
+      )}
       <div className="absolute inset-0 grid-pattern opacity-50" />
       <div className="absolute -right-24 -top-24 w-[380px] h-[380px] rounded-full bg-jv-green/10 blur-3xl" />
       <div className="container-jv relative py-16 lg:py-20">

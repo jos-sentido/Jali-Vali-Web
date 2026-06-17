@@ -17,6 +17,7 @@ export default function ProyectosPage() {
         eyebrow="Portafolio"
         title="Proyectos de infraestructura ejecutados"
         intro="Casos representativos de nuestra capacidad técnica y operativa en obra pública y privada."
+        bg="/brand/banners/water-control.jpg"
       />
 
       <section className="section">

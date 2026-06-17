@@ -18,6 +18,7 @@ export default function ExperienciaPage() {
         eyebrow="Experiencia comprobada"
         title="Respaldo para licitaciones y proyectos de gran escala"
         intro="Capacidad operativa comprobada y cumplimiento normativo para gobiernos, organismos operadores de agua, desarrolladores e industria."
+        bg="/brand/banners/aerial-infra.jpg"
       />
 
       {/* Monto total destacado */}

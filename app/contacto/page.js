@@ -34,6 +34,7 @@ export default function ContactoPage() {
         eyebrow="Contacto"
         title="Solicite su propuesta"
         intro="Cuéntenos sobre su proyecto o licitación. Atendemos al sector público y privado en todo México."
+        bg="/brand/banners/site-panorama.jpg"
       />
 
       <section className="section">

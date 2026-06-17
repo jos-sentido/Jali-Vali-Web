@@ -309,6 +309,29 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ============ BANDA DE IMPACTO ============ */}
+      <section className="relative overflow-hidden">
+        <Image
+          src="/brand/banners/aerial-infra.jpg"
+          alt="Obra de infraestructura de gran escala"
+          width={1920}
+          height={1080}
+          sizes="100vw"
+          className="w-full h-[340px] md:h-[420px] object-cover"
+        />
+        <div className="absolute inset-0 bg-jv-ink/70" />
+        <div className="absolute inset-0 grid-pattern opacity-30" />
+        <div className="absolute inset-0 flex items-center">
+          <div className="container-jv">
+            <p className="eyebrow text-jv-green-light">Nuestro compromiso</p>
+            <h2 className="mt-3 max-w-3xl text-3xl md:text-5xl font-extrabold text-white leading-tight tracking-tight">
+              Infraestructura que protege hoy,{" "}
+              <span className="text-jv-green">desarrollo que trasciende mañana.</span>
+            </h2>
+          </div>
+        </div>
+      </section>
+
       <CTASection />
     </>
   );

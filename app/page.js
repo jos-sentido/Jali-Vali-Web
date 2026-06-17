@@ -42,7 +42,7 @@ export default function Home() {
           <div className="max-w-3xl reveal">
             <span className="eyebrow text-jv-green-light">Empresa mexicana líder · {company.year}</span>
             <h1 className="mt-5 text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
-              Infraestructura crítica que{" "}
+              Infraestructura estratégica que{" "}
               <span className="text-jv-green">protege, conecta y transforma</span> al país.
             </h1>
             <p className="mt-6 text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">

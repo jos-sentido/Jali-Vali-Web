@@ -6,7 +6,7 @@ import Counter from "@/components/Counter";
 export const metadata = {
   title: "Nosotros",
   description:
-    "JALIE-VALI Constructora: capacidad técnica, operativa y maquinaria propia para proyectos de infraestructura crítica en México.",
+    "JALIE-VALI Constructora: capacidad técnica, operativa y maquinaria propia para proyectos de infraestructura estratégica en México.",
 };
 
 const pillars = [
@@ -17,7 +17,7 @@ const pillars = [
   },
   {
     title: "Visión",
-    text: "Ser la constructora de referencia en infraestructura crítica en México, reconocida por su capacidad operativa, su maquinaria propia y la confiabilidad de sus soluciones llave en mano.",
+    text: "Ser la constructora de referencia en infraestructura estratégica en México, reconocida por su capacidad operativa, su maquinaria propia y la confiabilidad de sus soluciones llave en mano.",
     pending: true,
   },
   {

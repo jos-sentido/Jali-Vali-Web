@@ -25,7 +25,7 @@ export default function Counter({ value, prefix = "", suffix = "", duration = 14
           started.current = true;
           const start = performance.now();
           const tick = (now) => {
-            const p = Math.min((now - start) / duration, 1);
+            const p = Math.min(Math.max((now - start) / duration, 0), 1);
             const eased = 1 - Math.pow(1 - p, 3); // ease-out cubic
             setDisplay(value * eased);
             if (p < 1) requestAnimationFrame(tick);

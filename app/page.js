@@ -21,23 +21,24 @@ const money = (n) =>
 export default function Home() {
   return (
     <>
-      {/* ================= HERO ================= */}
+      {/* ================= HERO (full-bleed) ================= */}
       <section className="relative bg-jv-ink text-white overflow-hidden">
-        <div className="hidden lg:block absolute inset-y-0 right-0 w-[58%]">
+        <div className="absolute inset-0">
           <Image
-            src="/brand/obras/desazolve-canal.jpg"
+            src="/brand/banners/hero-main.jpg"
             alt=""
             fill
             priority
-            sizes="58vw"
+            sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-jv-ink via-jv-ink/90 to-jv-ink/30" />
-          <div className="absolute inset-0 bg-gradient-to-t from-jv-ink/60 to-transparent" />
+          {/* Oscurecido para legibilidad: más denso a la izquierda y abajo */}
+          <div className="absolute inset-0 bg-gradient-to-r from-jv-ink via-jv-ink/85 to-jv-ink/45" />
+          <div className="absolute inset-0 bg-gradient-to-t from-jv-ink via-jv-ink/30 to-jv-ink/40" />
         </div>
-        <div className="absolute inset-0 grid-pattern opacity-50" />
+        <div className="absolute inset-0 grid-pattern opacity-30" />
         <div className="absolute -right-32 -top-32 w-[480px] h-[480px] rounded-full bg-jv-green/10 blur-3xl" />
-        <div className="container-jv relative py-20 lg:py-28">
+        <div className="container-jv relative py-24 lg:py-32">
           <div className="max-w-3xl reveal">
             <span className="eyebrow text-jv-green-light">Empresa mexicana líder · {company.year}</span>
             <h1 className="mt-5 text-4xl md:text-6xl font-extrabold tracking-tight leading-[1.05]">
@@ -162,28 +163,41 @@ export default function Home() {
             {services.map((s, i) => (
               <article
                 key={s.slug}
-                className="group rounded-card border border-jv-line bg-white p-7 hover:border-jv-green hover:shadow-lg transition-all"
+                className="group rounded-card border border-jv-line bg-white overflow-hidden hover:border-jv-green hover:shadow-lg transition-all flex flex-col"
               >
-                <div className="w-12 h-12 rounded-lg bg-jv-green/10 text-jv-green-dark flex items-center justify-center font-extrabold text-lg">
-                  0{i + 1}
+                <div className="relative">
+                  <Image
+                    src={s.image}
+                    alt={s.title}
+                    width={600}
+                    height={360}
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="w-full h-44 object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-jv-ink/40 to-transparent" />
+                  <span className="absolute top-3 left-3 w-10 h-10 rounded-lg bg-jv-ink/85 backdrop-blur text-jv-green flex items-center justify-center font-extrabold">
+                    0{i + 1}
+                  </span>
                 </div>
-                <h3 className="mt-5 text-xl font-bold text-jv-ink leading-snug">{s.title}</h3>
-                <p className="mt-2 text-jv-gray text-sm leading-relaxed">{s.short}</p>
-                <ul className="mt-5 space-y-2">
-                  {s.items.slice(0, 4).map((it) => (
-                    <li key={it} className="flex gap-2.5 text-sm text-jv-ink/80">
-                      <Bullet className="mt-0.5" />
-                      {it}
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  href="/servicios"
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-jv-green-dark group-hover:gap-2.5 transition-all"
-                >
-                  Más información
-                  <span aria-hidden>→</span>
-                </Link>
+                <div className="p-7 flex flex-col flex-1">
+                  <h3 className="text-xl font-bold text-jv-ink leading-snug">{s.title}</h3>
+                  <p className="mt-2 text-jv-gray text-sm leading-relaxed">{s.short}</p>
+                  <ul className="mt-5 space-y-2 flex-1">
+                    {s.items.slice(0, 4).map((it) => (
+                      <li key={it} className="flex gap-2.5 text-sm text-jv-ink/80">
+                        <Bullet className="mt-0.5" />
+                        {it}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/servicios"
+                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-jv-green-dark group-hover:gap-2.5 transition-all"
+                  >
+                    Más información
+                    <span aria-hidden>→</span>
+                  </Link>
+                </div>
               </article>
             ))}
           </div>
@@ -216,9 +230,25 @@ export default function Home() {
 
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {machinery.map((m) => (
-              <div key={m.name} className="rounded-xl bg-white border border-jv-line p-4 text-center">
-                <div className="text-3xl font-extrabold text-jv-ink">{m.units}</div>
-                <div className="mt-1 text-[12px] text-jv-gray leading-tight">{m.name}</div>
+              <div
+                key={m.name}
+                className="relative rounded-xl overflow-hidden border border-jv-line group"
+              >
+                <Image
+                  src={m.image}
+                  alt={m.name}
+                  width={320}
+                  height={220}
+                  sizes="(max-width: 768px) 50vw, 18vw"
+                  className="w-full h-24 object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-jv-ink/90 via-jv-ink/25 to-transparent" />
+                <span className="absolute top-1.5 right-1.5 bg-jv-green text-jv-ink text-xs font-extrabold px-1.5 py-0.5 rounded">
+                  {m.units}
+                </span>
+                <span className="absolute bottom-1.5 left-2 right-2 text-[11px] font-semibold text-white leading-tight">
+                  {m.name}
+                </span>
               </div>
             ))}
           </div>
@@ -281,30 +311,27 @@ export default function Home() {
             intro="Generamos confianza y resultados para quienes desarrollan la infraestructura del país."
           />
           <div className="mt-12 grid md:grid-cols-2 gap-6">
-            <div className="rounded-card border border-jv-line p-8">
-              <h3 className="text-lg font-bold text-jv-ink flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-jv-green" /> Sector Gobierno
-              </h3>
-              <ul className="mt-5 grid sm:grid-cols-2 gap-3">
-                {audience.gobierno.map((a) => (
-                  <li key={a} className="flex gap-2 text-sm text-jv-ink/85">
-                    <Bullet className="mt-0.5" /> {a}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-card border border-jv-line p-8">
-              <h3 className="text-lg font-bold text-jv-ink flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-jv-green" /> Sector Privado
-              </h3>
-              <ul className="mt-5 grid sm:grid-cols-2 gap-3">
-                {audience.privado.map((a) => (
-                  <li key={a} className="flex gap-2 text-sm text-jv-ink/85">
-                    <Bullet className="mt-0.5" /> {a}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {[
+              { title: "Sector Gobierno", img: "/brand/audiencia/gobierno.jpg", list: audience.gobierno },
+              { title: "Sector Privado", img: "/brand/audiencia/privado.jpg", list: audience.privado },
+            ].map((col) => (
+              <div key={col.title} className="rounded-card border border-jv-line bg-white overflow-hidden">
+                <div className="relative h-48">
+                  <Image src={col.img} alt={col.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-jv-ink/85 via-jv-ink/35 to-transparent" />
+                  <h3 className="absolute bottom-4 left-6 text-xl font-bold text-white flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-jv-green" /> {col.title}
+                  </h3>
+                </div>
+                <ul className="p-8 grid sm:grid-cols-2 gap-3">
+                  {col.list.map((a) => (
+                    <li key={a} className="flex gap-2 text-sm text-jv-ink/85">
+                      <Bullet className="mt-0.5" /> {a}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </section>

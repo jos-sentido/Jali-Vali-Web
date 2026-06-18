@@ -61,7 +61,7 @@ export default function NosotrosPage() {
               ))}
             </dl>
           </div>
-          <ObraImage src="/brand/obras/pipeline.jpg" alt="Obra de infraestructura JALIE-VALI" ratio="aspect-[4/3]" />
+          <ObraImage src="/brand/nosotros/empresa.jpg" alt="Flota de maquinaria propia de JALIE-VALI" ratio="aspect-[4/3]" />
         </div>
       </section>
 

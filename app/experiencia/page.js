@@ -24,11 +24,11 @@ export default function ExperienciaPage() {
       {/* Monto total destacado */}
       <section className="section">
         <div className="container-jv">
-          <div className="rounded-card bg-jv-green-dark text-white p-10 text-center grid-pattern relative overflow-hidden">
-            <p className="text-sm uppercase tracking-widest text-white/80">
+          <div className="rounded-card bg-jv-green-dark text-white p-7 sm:p-10 text-center grid-pattern relative overflow-hidden">
+            <p className="text-xs sm:text-sm uppercase tracking-widest text-white/80">
               Monto total de obras presentadas · {company.year}
             </p>
-            <p className="mt-3 text-5xl md:text-6xl font-extrabold tabular-nums">
+            <p className="mt-3 font-extrabold tabular-nums leading-none text-[clamp(1.7rem,8vw,3.75rem)]">
               {portfolioBreakdown.totalLabel}
             </p>
             <p className="mt-2 text-white/85">MXN</p>

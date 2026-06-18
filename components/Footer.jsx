@@ -7,15 +7,13 @@ export default function Footer() {
     <footer className="bg-jv-black text-white/70">
       <div className="container-jv py-16 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <span className="bg-white rounded-md p-2 inline-flex mb-4">
-            <Image
-              src="/brand/logo-jali-vali.png"
-              alt="JALIE-VALI Constructora"
-              width={150}
-              height={64}
-              className="h-11 w-auto"
-            />
-          </span>
+          <Image
+            src="/brand/logo-jali-vali-white.png"
+            alt="JALIE-VALI Constructora"
+            width={210}
+            height={140}
+            className="h-14 w-auto mb-4"
+          />
           <p className="text-sm leading-relaxed text-white/55 max-w-xs">
             {company.description}
           </p>

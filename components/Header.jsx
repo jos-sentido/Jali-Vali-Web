@@ -31,17 +31,15 @@ export default function Header() {
       }`}
     >
       <div className="container-jv flex items-center justify-between h-[68px]">
-        <Link href="/" className="flex items-center gap-2.5 shrink-0">
-          <span className="bg-white rounded-md p-1.5 flex items-center">
-            <Image
-              src="/brand/logo-jali-vali.png"
-              alt="JALIE-VALI Constructora"
-              width={120}
-              height={52}
-              className="h-9 w-auto"
-              priority
-            />
-          </span>
+        <Link href="/" className="flex items-center shrink-0">
+          <Image
+            src="/brand/logo-jali-vali-white.png"
+            alt="JALIE-VALI Constructora"
+            width={180}
+            height={120}
+            className="h-12 w-auto"
+            priority
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">

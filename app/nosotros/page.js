@@ -120,7 +120,7 @@ export default function NosotrosPage() {
       {/* Datos corporativos pendientes */}
       <section className="section relative bg-jv-ink text-white overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/brand/banners/site-panorama.jpg" alt="" fill sizes="100vw" className="object-cover" />
+          <Image src="/brand/nosotros/ficha-bg.jpg" alt="" fill sizes="100vw" className="object-cover" />
           <div className="absolute inset-0 bg-jv-ink/88" />
           <div className="absolute inset-0 grid-pattern opacity-30" />
         </div>
@@ -128,11 +128,9 @@ export default function NosotrosPage() {
           <div className="flex items-center gap-3 flex-wrap">
             <SectionHeading light eyebrow="Ficha corporativa" title="Datos de la empresa" />
           </div>
-          <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-xl overflow-hidden border border-white/10">
+          <div className="mt-8 grid sm:grid-cols-2 gap-px bg-white/10 rounded-xl overflow-hidden border border-white/10">
             {[
-              ["Razón social", company.legalName],
               ["Año de fundación", company.foundedYear],
-              ["RFC", company.rfc],
               ["Cobertura", company.coverage],
             ].map(([k, v]) => (
               <div key={k} className="bg-jv-ink p-5">
